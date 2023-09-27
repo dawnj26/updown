@@ -11,5 +11,6 @@
         <input type="file" name="myFile" id="myFile">
         <input type="submit" value="Upload">
     </form>
+    <a href="scan.php">View uploads</a>
 </body>
 </html>

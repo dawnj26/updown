@@ -17,8 +17,8 @@ function fileExtension($s)
 
 $filepath = $_FILES["myFile"]["tmp_name"];
 $filesize = filesize($filepath);
-$fileinfo = finfo_open(FILEINFO_MIME_TYPE);
-$filetype = finfo_file($fileinfo, $filepath);
+// $fileinfo = finfo_open(FILEINFO_MIME_TYPE);
+// $filetype = finfo_file($fileinfo, $filepath);
 $anotherName = $_FILES["myFile"]["name"];
 
 

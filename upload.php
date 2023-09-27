@@ -19,7 +19,7 @@ $filepath = $_FILES["myFile"]["tmp_name"];
 $filesize = filesize($filepath);
 $fileinfo = finfo_open(FILEINFO_MIME_TYPE);
 $filetype = finfo_file($fileinfo, $filepath);
-
+$anotherName = $_FILES["myFile"]["name"];
 
 
 if ($filesize === 0) {
@@ -27,13 +27,10 @@ if ($filesize === 0) {
 }
 
 $filename = basename($filepath);
-$dir = "/home/dawn/Documents/xampp/htdocs/updown";
-$targetDirectory = $dir . "/uploads";
+$targetDirectory = __DIR__ . "/uploads";
 
-echo $filename . "<br>";
+$newFilePath = $targetDirectory . "/" . $anotherName;
 
-$newFilePath = $targetDirectory . "/" . $filename . fileExtension($_FILES["myFile"]["name"]);
-echo $newFilePath;
 if (!copy($filepath, $newFilePath)) {
     die("Cannot move file!");
 }
@@ -41,5 +38,7 @@ if (!copy($filepath, $newFilePath)) {
 unlink($filepath);
 
 echo "File uploaded successfully!";
+
+header("Refresh:1;URL=index.php?hello=hi");
 
 ?>

@@ -39,6 +39,6 @@ unlink($filepath);
 
 echo "File uploaded successfully!";
 
-header("Refresh:1;URL=index.php?hello=hi");
+header("Refresh:1;URL=index.php");
 
 ?>
